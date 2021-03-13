@@ -37,7 +37,7 @@ function checkNumber() {
 
   // Check in range
   if (num > 100 || num < 1) {
-    msgEl.innerHTML = `<div>Number must be between 1 and 100</div>`;
+    msgEl.innerHTML += `<div>Number must be between 1 and 100</div>`;
     return;
   }
 
@@ -66,3 +66,9 @@ recognition.addEventListener("result", onSpeak);
 
 // End SR service
 recognition.addEventListener("end", () => recognition.start());
+
+document.body.addEventListener("click", (e) => {
+  if (e.target.id == "play-again") {
+    window.location.reload();
+  }
+});
